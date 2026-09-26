@@ -26,10 +26,10 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew assembleRelease --stacktrace
+      run: ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: DebloatHyperOS-Release
-        path: app/build/outputs/apk/release/*.apk
+        name: DebloatHyperOS-APK
+        path: app/build/outputs/apk/debug/*.apk
