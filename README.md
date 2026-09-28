@@ -90,7 +90,6 @@ Shizuku acts as a local bridge allowing the app to execute ADB-level Package Man
 Contributions, bug fixes, and safety list improvements are welcome! Feel free to submit an issue or open a pull request.
 
 ---
-
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
