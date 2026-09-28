@@ -32,8 +32,8 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            if (keystorePropertiesFile.exists()) {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
                 val relativeStorePath = keystoreProperties.getProperty("storeFile")
                 storeFile = rootProject.file(relativeStorePath)
                 storePassword = keystoreProperties.getProperty("storePassword")
@@ -45,7 +45,9 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
